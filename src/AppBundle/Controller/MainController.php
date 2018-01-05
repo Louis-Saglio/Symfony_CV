@@ -54,6 +54,7 @@ class MainController extends Controller
 
         return $this->render("@App/articleView.html.twig", [
             'article' => $em->getRepository("AppBundle:article")->find($id),
+            'comments' => $em->getRepository("AppBundle:comment")->findBy(["articleId" => $id]),
             'form' => $form->createView()
         ]);
     }

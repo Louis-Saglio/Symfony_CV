@@ -4,5 +4,10 @@
 <h1>{{ article.title }}</h1>
 <p>{{ article.body }}</p>
 <div>{{ form(form) }}</div>
+<div>
+    {% for comment in comments %}
+        <p>{{ comment.body }}</p>
+    {% endfor %}
+</div>
 </body>
 </html>
