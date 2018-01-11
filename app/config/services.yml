@@ -39,3 +39,17 @@ services:
         tags:
           - { name: sonata.admin, manager_type: orm, label: Article }
         public: true
+
+    admin.formation:
+      class: AppBundle\Admin\FormationAdmin
+      arguments: [~, AppBundle\Entity\formation, ~]
+      tags:
+        - { name: sonata.admin, manager_type: orm, label: Formation }
+      public: true
+
+    admin.experience:
+        class: AppBundle\Admin\ExperienceAdmin
+        arguments: [~, AppBundle\Entity\experience, ~]
+        tags:
+          - { name: sonata.admin, manager_type: orm, label: Experience }
+        public: true

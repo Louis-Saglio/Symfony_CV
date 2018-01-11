@@ -14,11 +14,14 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class ArticleAdmin extends AbstractAdmin
+class ExperienceAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title', 'text')->add('body', 'textarea');
+        $formMapper->add('title', 'text')
+            ->add('entreprise', 'text')
+            ->add('start_date', 'date')
+            ->add('end_date', 'date');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

@@ -14,11 +14,13 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class ArticleAdmin extends AbstractAdmin
+class FormationAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title', 'text')->add('body', 'textarea');
+        $formMapper->add('title', 'text')
+            ->add('school', 'text')
+            ->add('date', 'date');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

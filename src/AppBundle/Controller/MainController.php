@@ -60,33 +60,4 @@ class MainController extends Controller
             'form' => $form->createView()
         ]);
     }
-
-    /**
-     * @Route("/write")
-     */
-    public function ArticleWrite(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $article = new article();
-
-        $form = $this->get("form.factory")->createBuilder(FormType::class, $article)
-            ->add('body', TextareaType::class)
-            ->add('title', TextType::class)
-            ->add('Poster', SubmitType::class)
-            ->getForm()
-        ;
-
-        if ($request->isMethod('POST')) {
-            $form->handleRequest($request);
-            if ($form->isValid()) {
-                $em->persist($article);
-                $em->flush();
-            }
-        }
-
-        return $this->render("@App/articleWrite.html.twig", [
-            'form' => $form->createView(),
-        ]);
-    }
 }
