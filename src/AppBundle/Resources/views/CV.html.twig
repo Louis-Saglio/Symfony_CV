@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV</title>
+</head>
+<body>
+    <div>
+        <h2>Formations</h2>
+        <div>
+            {% for formation in formations %}
+                <h3>{{ formation.title }}</h3>
+                <p><span>Ecole : </span>{{ formation.school }}</p>
+                <p><span>Date d'obtention du diplôme : </span>{{ formation.date.format("D M Y") }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h2>Expériences</h2>
+        <div>
+            {% for experience in experiences %}
+                <h3>{{ experience.title }}</h3>
+                <p><span>Entreprise : </span>{{ experience.entreprise }}</p>
+                <p><span>Date de début : </span>{{ experience.startDate.format("D M Y") }}</p>
+                <p><span>Date de fin : </span>{{ experience.endDate.format("D M Y") }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -2,21 +2,19 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\article;
 use AppBundle\Entity\comment;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class MainController extends Controller
 {
     /**
-     * @Route("/index")
+     * @Route("/")
      */
     public function indexAction()
     {
@@ -58,6 +56,20 @@ class MainController extends Controller
             'article' => $em->getRepository("AppBundle:article")->find($id),
             'comments' => $em->getRepository("AppBundle:comment")->findBy(["articleId" => $id]),
             'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/cv")
+     */
+    public function ViewCV(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $formations = $em->getRepository("AppBundle:formation")->findAll();
+        $experiences = $em->getRepository("AppBundle:experience")->findAll();
+        return $this->render("AppBundle::CV.html.twig", [
+            'formations' => $formations,
+            'experiences' => $experiences
         ]);
     }
 }
