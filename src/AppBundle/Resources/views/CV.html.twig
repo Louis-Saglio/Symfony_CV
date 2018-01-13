@@ -10,8 +10,8 @@
         <div>
             {% for formation in formations %}
                 <h3>{{ formation.title }}</h3>
-                <p><span>Ecole : </span>{{ formation.school }}</p>
-                <p><span>Date d'obtention du diplôme : </span>{{ formation.date.format("D M Y") }}</p>
+                <p><span>{{ 'formation.ecole'|trans }}</span>{{ formation.school }}</p>
+                <p><span>{{ 'formation.date'|trans }}</span>{{ formation.date.format("D M Y") }}</p>
             {% endfor %}
         </div>
     </div>
@@ -20,9 +20,9 @@
         <div>
             {% for experience in experiences %}
                 <h3>{{ experience.title }}</h3>
-                <p><span>Entreprise : </span>{{ experience.entreprise }}</p>
-                <p><span>Date de début : </span>{{ experience.startDate.format("D M Y") }}</p>
-                <p><span>Date de fin : </span>{{ experience.endDate.format("D M Y") }}</p>
+                <p><span>{{ 'experience.entreprise'|trans }}</span>{{ experience.entreprise }}</p>
+                <p><span>{{ 'experience.start_date'|trans }}</span>{{ experience.startDate.format("D M Y") }}</p>
+                <p><span>{{ 'experience.end_date'|trans }}</span>{{ experience.endDate.format("D M Y") }}</p>
             {% endfor %}
         </div>
     </div>

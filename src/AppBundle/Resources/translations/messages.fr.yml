@@ -1,0 +1,8 @@
+experience:
+  entreprise: "Entreprise : "
+  start_date: "Date début : "
+  end_date: "Date de fin : "
+
+formation:
+  ecole: "Ecole : "
+  date: "Date d'obtention du diplôme : "
