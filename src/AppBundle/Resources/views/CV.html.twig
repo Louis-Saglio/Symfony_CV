@@ -1,30 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CV</title>
-</head>
-<body>
+{% extends "@App/base.html.twig" %}
+
+{% block content %}
+<div>
+    <h2>Formations</h2>
     <div>
-        <h2>Formations</h2>
-        <div>
-            {% for formation in formations %}
-                <h3>{{ formation.title }}</h3>
-                <p><span>{{ 'formation.ecole'|trans }}</span>{{ formation.school }}</p>
-                <p><span>{{ 'formation.date'|trans }}</span>{{ formation.date.format("D M Y") }}</p>
-            {% endfor %}
-        </div>
+        {% for formation in formations %}
+            <h3>{{ formation.title }}</h3>
+            <p><span>{{ 'formation.ecole'|trans }}</span>{{ formation.school }}</p>
+            <p><span>{{ 'formation.date'|trans }}</span>{{ formation.date.format("D M Y") }}</p>
+        {% endfor %}
     </div>
+</div>
+<div>
+    <h2>Expériences</h2>
     <div>
-        <h2>Expériences</h2>
-        <div>
-            {% for experience in experiences %}
-                <h3>{{ experience.title }}</h3>
-                <p><span>{{ 'experience.entreprise'|trans }}</span>{{ experience.entreprise }}</p>
-                <p><span>{{ 'experience.start_date'|trans }}</span>{{ experience.startDate.format("D M Y") }}</p>
-                <p><span>{{ 'experience.end_date'|trans }}</span>{{ experience.endDate.format("D M Y") }}</p>
-            {% endfor %}
-        </div>
+        {% for experience in experiences %}
+            <h3>{{ experience.title }}</h3>
+            <p><span>{{ 'experience.entreprise'|trans }}</span>{{ experience.entreprise }}</p>
+            <p><span>{{ 'experience.start_date'|trans }}</span>{{ experience.startDate.format("D M Y") }}</p>
+            <p><span>{{ 'experience.end_date'|trans }}</span>{{ experience.endDate.format("D M Y") }}</p>
+        {% endfor %}
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

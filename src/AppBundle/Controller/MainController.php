@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 class MainController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/blog", name="blog")
      */
     public function indexAction()
     {
@@ -27,9 +27,6 @@ class MainController extends Controller
 
     /**
      * @Route("/article/{id}")
-     * @param Request $request
-     * @param $id
-     * @return Response
      */
     public function ArticleView(Request $request, $id)
     {
@@ -60,7 +57,7 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/cv")
+     * @Route("/cv", name="cv")
      */
     public function ViewCV(Request $request)
     {

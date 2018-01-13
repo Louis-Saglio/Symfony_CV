@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<ul>
+    <li><a href="{{ path('blog') }}">Blog</a></li>
+    <li><a href="{{ path('cv') }}">CV</a></li>
+</ul>
+{% block content %}
+{% endblock %}
+</body>
+</html>
