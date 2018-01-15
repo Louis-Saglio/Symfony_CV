@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 class MainController extends Controller
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("", name="blog")
      */
     public function indexAction()
     {

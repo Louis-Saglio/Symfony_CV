@@ -1,9 +1,10 @@
 {% extends "@App/base.html.twig" %}
 
 {% block content %}
-<div>
-    <h1 class="display-4">Formations</h1>
-    <div>
+    <h1 class="display-4">CV</h1>
+<div style="margin-top: 50px">
+    <h2>{{ 'formation.title'|trans }}</h2>
+    <div style="margin-top: 30px">
         {% for formation in formations %}
             <h3>{{ formation.title }}</h3>
             <p><span>{{ 'formation.ecole'|trans }}</span>{{ formation.school }}</p>
@@ -11,9 +12,9 @@
         {% endfor %}
     </div>
 </div>
-<div>
-    <h2>Expériences</h2>
-    <div>
+<div style="margin-top: 50px">
+    <h2>{{ 'experience.title'|trans }}</h2>
+    <div style="margin-top: 30px">
         {% for experience in experiences %}
             <h3>{{ experience.title }}</h3>
             <p><span>{{ 'experience.entreprise'|trans }}</span>{{ experience.entreprise }}</p>

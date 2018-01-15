@@ -1,12 +1,14 @@
 {% extends "@App/base.html.twig" %}
 
 {% block content %}
-<h1 class="display-4">{{ article.title }}</h1>
-<p>{{ article.body }}</p>
-<div>{{ form(form) }}</div>
-<div>
-    {% for comment in comments %}
-        <p>{{ comment.body }}</p>
-    {% endfor %}
-</div>
+    <h1 class="display-4">{{ article.title }}</h1>
+    <p>{{ article.body }}</p>
+    <p>{{ "article.comment"|trans }}</p>
+    <div>{{ form(form) }}</div>
+    <p>{{ "article.comment_list"|trans }}</p>
+    <div>
+        {% for comment in comments %}
+            <p>{{ comment.body }}</p>
+        {% endfor %}
+    </div>
 {% endblock %}

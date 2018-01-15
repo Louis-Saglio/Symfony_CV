@@ -1,8 +1,20 @@
 experience:
+  title: "Expériences"
   entreprise: "Entreprise : "
   start_date: "Date début : "
   end_date: "Date de fin : "
 
 formation:
+  title: "Formations"
   ecole: "Ecole : "
   date: "Date d'obtention du diplôme : "
+
+article:
+  link_text: "Voir l'article complet et les commentaires"
+  comment: "Rédiger un commentaire"
+  comment_list: "Liste des commentaires :"
+
+menu:
+  blog: "Blog"
+  cv: "CV"
+  admin: "Administration"
