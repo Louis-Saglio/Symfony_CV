@@ -1,7 +1,7 @@
-<html>
-<head></head>
-<body>
-<h1>{{ article.title }}</h1>
+{% extends "@App/base.html.twig" %}
+
+{% block content %}
+<h1 class="display-4">{{ article.title }}</h1>
 <p>{{ article.body }}</p>
 <div>{{ form(form) }}</div>
 <div>
@@ -9,5 +9,4 @@
         <p>{{ comment.body }}</p>
     {% endfor %}
 </div>
-</body>
-</html>
+{% endblock %}

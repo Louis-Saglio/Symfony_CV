@@ -1,12 +1,12 @@
 {% extends "@App/base.html.twig" %}
 
 {% block content %}
-<h1>Blog</h1>
+<h1 class="display-4">Blog</h1>
 <div>
     {% for article in articles %}
         <h2>{{ article.title }}</h2>
         <p>{{ article.body }}</p>
-        <p><a href="/blog/{{ article.id }}">lien</a></p>
+        <p><a href="/article/{{ article.id }}">Voir l'article complet et les commentaires</a></p>
     {% endfor %}
 </div>
 {% endblock %}
